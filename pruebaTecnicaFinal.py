@@ -146,7 +146,7 @@ def validatePalindromeWord(input):
 
 
 # Main method for testing the methods
-def main():
+def tech_test():
     try:
         # Ask the user to choose the methods that will be tested
         methods = int(chooseMethods())
@@ -166,5 +166,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    tech_test()
 

@@ -4,9 +4,9 @@ import math
 import unidecode
 import re
 
-# Choose method to test, if option 1 is chosen the Palindrome method is tested, if option 2 is chosen the Fibonacci method, and with option 3 both are tested
-# @return The option chosen by the user (among the three available)
-# @Exception When the maximum number of attempts is reached (5) and none of the available options (1,2 or 3) was chosen
+# Choose which methods will be tested, if option 1 is chosen only the Palindrome method is tested, if option 2 is chosen only the Fibonacci method, and with option 3 both methods are tested
+# @return The option chosen by the user among the three available
+# @Exception Throws an error if the maximum number of attempts is reached (5) and without chosing any of the available options (1,2 or 3) 
 def chooseTestMethod():
     # Informative message of which options can be chosen
     print(
@@ -30,7 +30,7 @@ def chooseTestMethod():
 # Method for the user to enter the string to test the previously chosen methods, it is additionally verified that the entered string is valid
 # @return The string entered by the user
 # @Exception Error when the maximum number of attempts (5) is reached and a valid string was not inserted
-def receiveInput():
+def receiveInputs():
     # While Loop to iteratively try to get the user to enter a valid option, with a limit of 5 attempts
     attempts = 0
     while attempts < 5:
@@ -89,7 +89,7 @@ def isAPalindrome(word):
 # Method to validate if a number is a Fibonacci number
 # @param number The number to be evaluated as a Fibonacci number
 # @return True if the number is a Fibonacci number, False otherwise
-def isFibonacciNumber(number):
+def isAFibonacciNumber(number):
     # Define the first two numbers of the fibonacci series (fn and fn1) and a variable to save the next number in the sequence
     fn = 0
     fn1 = 1
@@ -106,7 +106,7 @@ def isFibonacciNumber(number):
     return False
 
 
-# Method for, from the input entered by the user, call the isFibonacciNumber method to validate if the string length is a fibonacci number or not, and inform the user of this result
+# Method for, from the input entered by the user, call the isAFibonacciNumber method to validate if the string length is a fibonacci number or not, and inform the user of this result
 # @param input The string to be evaluated if its length is a fibonacci number
 def validateFibonacciNumber(input):
     # Remove spaces from the length of the string, if desired, the other possible elements (commas, periods, question marks and exclamation marks) could also be removed.
@@ -122,7 +122,7 @@ def validateFibonacciNumber(input):
         + '" ('
         + str(inputLen)
         + ") es un numero Fibonacci!"
-    ) if isFibonacciNumber(inputLen) else print(
+    ) if isAFibonacciNumber(inputLen) else print(
         'El tamanio de la cadena "'
         + input
         + '" ('
@@ -151,7 +151,7 @@ def tech_test():
         # Ask the user to choose the methods that will be tested
         methods = int(chooseTestMethod())
         # Ask for the user's input
-        input = receiveInput().strip()
+        input = receiveInputs().strip()
         # According to the chosen methods, call the corresponding methods
         if methods == 1:
             validatePalindromeWord(input)

@@ -4,7 +4,7 @@ import math
 import unidecode
 import re
 
-# Method to choose which methods wanna be tested, if option 1 is chosen only the Palindrome method is tested, if option 2 is chosen only the Fibonacci method, and with option 3 both methods are tested
+# Choose which methods wanna be tested, if option 1 is chosen only the Palindrome method is tested, if option 2 is chosen only the Fibonacci method, and with option 3 both methods are tested
 # @return The option chosen by the user (among the three available)
 # @Exception Error when the maximum number of attempts is reached (5) and none of the available options (1,2 or 3) was chosen
 def chooseTestMethod():
@@ -68,7 +68,7 @@ def validateInput(word):
 # Method to validate if a string is Palindrome
 # @param word The string to be evaluated as a Palindrome word
 # @return True if the string is Palindrome, False otherwise
-def isPalindrome(word):
+def isAPalindrome(word):
     # A variable with the size of the chain and another with half the length since it's only necessary to compare up to half
     lengthWord = len(word)
     middleVal = math.ceil(lengthWord / 2)
@@ -140,7 +140,7 @@ def validatePalindromeWord(input):
         if ch in inputModify:
             inputModify = inputModify.replace(ch, "")
     # Validate if the string is a Palindrome word, and the result is printed
-    print('La cadena "' + input + '" es palindrome!') if isPalindrome(
+    print('La cadena "' + input + '" es palindrome!') if isAPalindrome(
         inputModify
     ) else print('La cadena "' + input + '" NO es palindrome!')
 

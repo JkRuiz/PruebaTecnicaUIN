@@ -4,9 +4,9 @@ import math
 import unidecode
 import re
 
-# Choose which methods wanna be tested, if option 1 is chosen only the Palindrome method is tested, if option 2 is chosen only the Fibonacci method, and with option 3 both methods are tested
+# Choose method to test, if option 1 is chosen the Palindrome method is tested, if option 2 is chosen the Fibonacci method, and with option 3 both are tested
 # @return The option chosen by the user (among the three available)
-# @Exception Error when the maximum number of attempts is reached (5) and none of the available options (1,2 or 3) was chosen
+# @Exception When the maximum number of attempts is reached (5) and none of the available options (1,2 or 3) was chosen
 def chooseTestMethod():
     # Informative message of which options can be chosen
     print(

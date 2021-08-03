@@ -7,7 +7,7 @@ import re
 # Method to choose which methods wanna be tested, if option 1 is chosen only the Palindrome method is tested, if option 2 is chosen only the Fibonacci method, and with option 3 both methods are tested
 # @return The option chosen by the user (among the three available)
 # @Exception Error when the maximum number of attempts is reached (5) and none of the available options (1,2 or 3) was chosen
-def chooseMethods():
+def chooseTestMethod():
     # Informative message of which options can be chosen
     print(
         "Por favor elija la opcion (1, 2 o 3) acorde a los metodos que desea probar: \n 1. Validar si una cadena de texto, sin caracteres especiales ni numeros, es Palindrome \n 2. Validar si el tamanio de una cadena de texto, sin caracteres especiales ni numeros, es un numero de Fibonacci \n 3. Ambos metodos"
@@ -149,7 +149,7 @@ def validatePalindromeWord(input):
 def tech_test():
     try:
         # Ask the user to choose the methods that will be tested
-        methods = int(chooseMethods())
+        methods = int(chooseTestMethod())
         # Ask for the user's input
         input = receiveInput().strip()
         # According to the chosen methods, call the corresponding methods
